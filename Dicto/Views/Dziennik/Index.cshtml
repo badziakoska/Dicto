@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Dicto.Models.Dziennik>
+
+@{
+    ViewData["Title"] = "Lista dzienników";
+}
+
+    <div class="container pt-3">
+        <h3>Lista dzienników</h3>
+    </div>
+
+    <div class="container pt-3">
+        <p>
+            <a asp-action="Create">Dodaj nowy dziennik</a>
+        </p>
+    </div>
+
+    <div class="container pt-3">        
+        <table class="table">            
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nazwa)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Rok)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nazwa)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Rok)
+                        </td>
+                       <td>
+                            <a asp-action="Open" asp-route-id="@item.Id">Otwórz</a> |
+                            <a asp-action="Edit" asp-route-id="@item.Id">Edytuj</a> |
+                            <a asp-action="Delete" asp-route-id="@item.Id">Usuń</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>

@@ -1,0 +1,65 @@
+﻿@model Dicto.Models.Uczen
+
+@{
+    ViewData["Title"] = "Edytuj kartę ucznia";
+}
+
+@section Menu{
+    @Html.Partial("NawigacjaDziennika")
+}
+
+<div class="container pt-3">
+    <h3>Edytuj kartę ucznia</h3>
+</div>
+
+<div class="row">
+    <div class="container pt-3">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Imie" class="control-label"></label>
+                <input asp-for="Imie" class="form-control" />
+                <span asp-validation-for="Imie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nazwisko" class="control-label"></label>
+                <input asp-for="Nazwisko" class="form-control" />
+                <span asp-validation-for="Nazwisko" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdGrupy" class="control-label"></label>
+                <input asp-for="IdGrupy" class="form-control" />
+                <span asp-validation-for="IdGrupy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Diagnoza" class="control-label"></label>
+                <select asp-for="Diagnoza" asp-items="Html.GetEnumSelectList<Dicto.Enums.Diagnoza>()" class="form-control"></select>
+                <span asp-validation-for="Diagnoza" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OpisWady" class="control-label">Opis wady</label>
+                <textarea asp-for="OpisWady" class="form-control"></textarea>
+                <span asp-validation-for="OpisWady" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlanPracy" class="control-label">Plan pracy</label>
+                <textarea asp-for="PlanPracy" class="form-control"></textarea>
+                <span asp-validation-for="PlanPracy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Uwagi" class="control-label"></label>
+                <textarea asp-for="Uwagi" class="form-control"></textarea>
+                <span asp-validation-for="Uwagi" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <input type="submit" value="Zapisz" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="container pt-3">
+    <a asp-action="Index">Powrót do listy uczniów</a>
+</div>
+

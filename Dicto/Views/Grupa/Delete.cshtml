@@ -1,0 +1,24 @@
+﻿@model Dicto.Models.Grupa
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+@section Menu{
+    @Html.Partial("NawigacjaDziennika")
+}
+
+
+<div class="container pt-3">
+    <h4>Czy napewno chcesz usunąć grupę @Model.Nazwa</h4>
+</div>
+
+<div class="container pt-3">
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Usuń" class="btn btn-danger" /> |
+        <a asp-action="Index">Powrót do listy grup</a>
+    </form>
+</div>
+

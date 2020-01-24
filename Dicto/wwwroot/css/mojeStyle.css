@@ -1,0 +1,24 @@
+﻿html,
+body {
+    height: 100%;
+}
+#cover {
+    background: #000000 url('../images/background1.jpg') center center no-repeat;
+    background-size: cover;
+    height: 50%;
+    color: #002e5c;
+    display: flex;
+    align-items: center;
+}
+#cover-caption{
+    width: 100%;
+}
+
+#cover-footer{
+    background: #000000 url('../images/background1.jpg') center bottom no-repeat;
+    background-size: cover;
+    height: 10%;
+    color: white;
+    display: flex;
+    align-items: center;
+}

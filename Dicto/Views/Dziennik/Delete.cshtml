@@ -1,0 +1,16 @@
+﻿@model Dicto.Models.Dziennik
+
+@{
+    ViewData["Title"] = "Usuń dziennik";
+}
+
+<div class="container pt-3">
+    <h4>Czy na pewno chcesz usunąć dziennik @Model.Nazwa?</h4>
+</div>
+<div class="container pt-3">
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Usuń" class="btn btn-danger" /> |
+        <a asp-action="Index">Powrót do listy dzienników</a>
+    </form>
+</div>

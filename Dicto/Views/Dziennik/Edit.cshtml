@@ -1,0 +1,35 @@
+﻿@model Dicto.Models.Dziennik
+
+@{
+    ViewData["Title"] = "Edytuj";
+}
+
+<div class="container pt-3">
+    <h3>Edytuj dziennik</h3>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nazwa" class="control-label"></label>
+                <input asp-for="Nazwa" class="form-control" />
+                <span asp-validation-for="Nazwa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rok" class="control-label"></label>
+                <input asp-for="Rok" class="form-control" />
+                <span asp-validation-for="Rok" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Zapisz" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="container pt-3">
+    <a asp-action="Index">Powrót do listy dzienników</a>
+</div>
+

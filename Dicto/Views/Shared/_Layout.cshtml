@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Dicto</title>
+    <link rel="stylesheet" href="~/lib/twitter-bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/mojeStyle.css" />
+</head>
+<body>
+    <section id="cover">
+        <div id="cover-caption">
+            <div class="container-fluid">
+                <div class="row align-items-baseline" style="background-color: rgba(255, 255, 255, 0.5)">
+                    <div class="col-sm-3 display-1">
+                        <p><b>Dicto</b></p>
+                    </div>
+                    <div class="col-sm-9 display-4">
+                        <p><small>Elektroniczny dziennik logopedyczny</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/Dziennik/Index">Główna</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Dziennik/Index">Dzienniki</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="row">
+            <div class="nav flex-column col-2">
+                @RenderSection("Menu", false)
+            </div>
+            <div class="col-9 pt-3 py-5">
+                @RenderBody()
+            </div>
+        </div>
+    </section>  
+<footer id="cover-footer">
+    <section>
+        <div class="col pt-3 py-5">
+            © 2020 Copyright: Magdalena Sibila
+        </div>
+    </section>
+</footer>
+</body>
+</html>

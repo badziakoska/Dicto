@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Dicto.Models.Grupa>
+
+@{
+    ViewData["Title"] = "Lista grup";
+}
+
+@section Menu{
+    @Html.Partial("NawigacjaDziennika")
+}
+
+<div class="container pt-3">
+    <h3>Lista grup</h3>
+</div>
+
+<div class="container pt-3">
+    <p>
+        <a asp-action="Create">Dodaj nową grupę</a>
+    </p>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nazwa)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nazwa)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edytuj</a> | 
+                    <a asp-action="Delete" asp-route-id="@item.Id">Usuń</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

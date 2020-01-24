@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Dicto.Models.Uczen>
+
+@{
+    ViewData["Title"] = "Dziennik";
+}
+@section Menu{
+    @Html.Partial("NawigacjaDziennika")
+}
+
+<div class="container pt-3">
+    <h3>@ViewBag.NazwaDziennika</h3>
+</div>
+
+<div class="container pt-3">
+    <p>
+        <a asp-controller="Uczen" asp-action="Create">Dodaj ucznia</a>
+    </p>
+</div>
+<div class="container pt-3">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Imie)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nazwisko)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Imie)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nazwisko)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-controller="Uczen" asp-route-id="@item.Id">Edytuj</a> |
+                        <a asp-action="Delete" asp-controller="Uczen" asp-route-id="@item.Id">Usuń</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div class="container pt-3">
+    <a asp-action="Index">Powrót do listy dzienników</a>
+</div>
